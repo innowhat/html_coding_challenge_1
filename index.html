@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Printer Information Task</title>
+  <script src="https://unpkg.com/stimulus/dist/stimulus.umd.js"></script>
+ <script src="/index.js"></script>
+  </script>
+  <link href="/tailwind.css" rel="stylesheet" />
+</head>
+
+<body class="h-full py-16 antialiased bg-black font-sans">
+  <main data-controller="printer" data-printer-url="/data.json" class=" flex flex-col items-center justify-center py-20">
+    <h2 data-printer-target="name" class="text-white text-3xl text-primary-normal font-bold" > </h2>
+      <select  data-printer-target="impacts" data-action="printer#change" class="m-5 p-2 min-w-10 block rounded-lg">
+        <option  value="0" data-printer-target="climate_change"></option> 
+        <option  value="1" data-printer-target="energy_use"></option> 
+      </select>
+      <svg class=" max-w-sm	h-auto 	shadow bg-gray-400 bg-opacity-50 block border border-light-gray-900" viewBox="0 0 555 500">
+        <g transform="translate(100,0)">
+          <g transform="scale(1,-1) translate(0,-500)" class="fill-current text-red-600 border border-white stroke-2"
+            stroke="gray">
+            <rect x="10" y="120" width="60"  data-printer-target="production"></rect>
+          </g>
+          <text class="fill-current text-gray-100 text-3xl font-bold" y="430" x="30">P</text>
+        </g>
+
+        <g transform="translate(200,0)">
+          <g transform="scale(1,-1) translate(0,-500)" class="fill-current text-yellow-600 border border-white stroke-2"
+            stroke="gray">
+            <rect x="10" y="120" width="60" data-printer-target="distribution"></rect>
+          </g>
+          <text class="fill-current text-gray-100 text-3xl font-bold" y="430" x="30">D</text>
+        </g>
+
+        <g transform="translate(300,0)">
+          <g transform="scale(1,-1) translate(0,-500)" class="fill-current text-gray-100 border border-white stroke-2"
+            stroke="gray">
+            <rect x="10" y="120" width="60"  data-printer-target="use"></rect>
+          </g>
+          <text class="fill-current text-gray-100 text-3xl font-bold" y="430" x="30">U</text>
+        </g>
+
+        <g transform="translate(400,0)">
+          <g transform="scale(1,-1) translate(0,-500)" class="fill-current text-blue-400 border border-white stroke-2"
+            stroke="gray">
+            <rect x="10" y="120" width="60" data-printer-target="end_of_life"></rect>
+          </g>
+          <text class="fill-current text-gray-100 text-3xl font-bold" y="430" x="30">E</text>
+        </g>
+
+      </svg>
+  </main>
+</body>
+</html>
